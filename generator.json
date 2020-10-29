@@ -1,0 +1,78 @@
+{
+  "tasks": [
+    {
+      "profileName": "NovelRT",
+      "sources": [
+        "ext/NovelRT.Interop.h"
+      ],
+      "mode": "Clang",
+      "cacheDir": "build/cache",
+      "cacheKey": "nrt",
+      "controlDescriptors": [
+        "convert-windows-only"
+      ],
+      "converter": {},
+      "prefix": "NovelRT",
+      "clang": {
+        "args": [
+          "--language=c++",
+          "--std=c++17",
+          "-m32",
+          "-Wno-expansion-to-defined",
+          "-Wno-ignored-attributes",
+          "-Wno-ignored-pragma-intrinsic",
+          "-Wno-nonportable-include-path",
+          "-Wno-pragma-pack",
+          "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+          "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+          "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+          "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
+          "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+          "-Iext/NovelRT/include",
+          "-Iext/include"
+        ],
+        "traverse": [
+          "ext/NovelRT/include/NovelRT.Interop/*.h",
+          "ext/NovelRT/include/NovelRT.Interop/**/*.h"
+        ],
+        "classes": {
+          "NovelRT.Interop.h": "[Core]NovelRT"
+        }
+      },
+      "exclude": [
+      ],
+      "rename": {
+      },
+      "bakery": {
+        "profileNames": [
+          "NovelRT.Interop"
+        ]
+      },
+      "output": {
+        "mode": "Default",
+        "path": "src",
+        "licenseFile": "build/LICENSE_HEADER.txt",
+        "props": "build/bindings.props"
+      },
+      "namespace": "NovelRT.NET",
+      "extensionsNamespace": "NovelRT.NET.Extensions",
+      "nameContainer": {
+        "linux-x64": "libNovelRT.so",
+        "win-x64": "NovelRT.dll",
+        "win-x86": "NovelRT.dll",
+        "osx-x64": "libNovelRT.dylib",
+        "android": "libNovelRT.so",
+        "iOS": "__Internal",
+        "className": "NovelRTLibraryNameContainer"
+      },
+      "typeMaps": [
+        {
+          "$typemapPrecedesInjections": "true"
+        },
+        {
+          "$include.commonTypeMap": "ext/Silk.NET/build/csharp_typemap.json"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+[submodule "ext/Silk.NET"]
+	path = ext/Silk.NET
+	url = https://github.com/Ultz/Silk.NET
+[submodule "ext/NovelRT"]
+	path = ext/NovelRT
+	url = https://github.com/NovelRT/NovelRT
